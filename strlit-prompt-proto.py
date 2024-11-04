@@ -25,9 +25,10 @@ class Response(BaseModel):
     category: ContentType
     content: str
     type: ResponseType
+    
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+org_id = st.secrets["ORG_ID"]
 
-openai_api_key = "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"
-org_id = "org-5ypDvpODiXSf3oiPxa3ePNII"
 
 client = OpenAI(
     api_key=openai_api_key, 
