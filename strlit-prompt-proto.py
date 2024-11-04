@@ -29,7 +29,7 @@ class Response(BaseModel):
 openai_api_key = st.secrets.get("OPENAI_API_KEY")
 org_id = st.secrets.get("OPENAI_ORG_ID")
 
-print(org_id)
+print(st.secrets)
 
 # client = OpenAI(
 #     api_key=openai_api_key, 
