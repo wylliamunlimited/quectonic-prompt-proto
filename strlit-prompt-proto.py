@@ -26,19 +26,14 @@ class Response(BaseModel):
     content: str
     type: ResponseType
     
-openai_api_key = st.secrets.get("OPENAI_API_KEY")
-org_id = st.secrets.get("OPENAI_ORG_ID")
+openai_api_key = st.secrets['openai_details'].get("OPENAI_API_KEY")
+org_id = st.secrets['openai_details'].get("OPENAI_ORG_ID")
 
 print(st.secrets)
 
-# client = OpenAI(
-#     api_key=openai_api_key, 
-#     organization=org_id
-# )
-
 client = OpenAI(
-    api_key=st.secrets.get("OPENAI_API_KEY"), 
-    organization=st.secrets.get("OPENAI_ORG_ID")
+    api_key=openai_api_key, 
+    organization=org_id
 )
 
 st.sidebar.title("Visualization")
