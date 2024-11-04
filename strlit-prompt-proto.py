@@ -30,9 +30,14 @@ openai_api_key = st.secrets.get("OPENAI_API_KEY")
 org_id = st.secrets.get("OPENAI_ORG_ID")
 
 
+# client = OpenAI(
+#     api_key=openai_api_key, 
+#     organization=org_id
+# )
+
 client = OpenAI(
-    api_key=openai_api_key, 
-    organization=org_id
+    api_key=st.secrets.get("OPENAI_API_KEY"), 
+    organization=st.secrets.get("OPENAI_ORG_ID")
 )
 
 st.sidebar.title("Visualization")
