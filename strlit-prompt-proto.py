@@ -26,8 +26,8 @@ class Response(BaseModel):
     content: str
     type: ResponseType
     
-openai_api_key = st.secrets["OPENAI_API_KEY"]
-org_id = st.secrets["OPENAI_ORG_ID"]
+openai_api_key = st.secrets.get("OPENAI_API_KEY")
+org_id = st.secrets.get("OPENAI_ORG_ID")
 
 
 client = OpenAI(
