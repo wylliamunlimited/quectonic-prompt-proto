@@ -13,24 +13,24 @@ from ast import literal_eval
 # NOTE: gather of data
 sample_data = pd.read_csv("./Daily_Sugar_Intake_Data.csv").to_json()
 
-# Access theme from secrets
-theme = st.secrets.get("theme", {})
+# # Access theme from secrets
+# theme = st.secrets.get("theme", {})
 
-# Dynamically set theme properties if available in secrets
-if theme:
-    # Generate a custom theme configuration string
-    theme_config = f"""
-    [theme]
-    primaryColor="{theme.get('primaryColor', '#1E90FF')}"
-    backgroundColor="{theme.get('backgroundColor', '#FFFFFF')}"
-    secondaryBackgroundColor="{theme.get('secondaryBackgroundColor', '#F0F2F6')}"
-    textColor="{theme.get('textColor', '#000000')}"
-    font="{theme.get('font', 'sans serif')}"
-    """
+# # Dynamically set theme properties if available in secrets
+# if theme:
+#     # Generate a custom theme configuration string
+#     theme_config = f"""
+#     [theme]
+#     primaryColor="{theme.get('primaryColor', '#1E90FF')}"
+#     backgroundColor="{theme.get('backgroundColor', '#FFFFFF')}"
+#     secondaryBackgroundColor="{theme.get('secondaryBackgroundColor', '#F0F2F6')}"
+#     textColor="{theme.get('textColor', '#000000')}"
+#     font="{theme.get('font', 'sans serif')}"
+#     """
 
-    # Write theme to .streamlit config file for the session
-    with open(".streamlit/config.toml", "w") as config_file:
-        config_file.write(theme_config)
+#     # Write theme to .streamlit config file for the session
+#     with open(".streamlit/config.toml", "w") as config_file:
+#         config_file.write(theme_config)
 
 class ContentType(str, Enum):
     clarifying_question = "clarifying_question"
